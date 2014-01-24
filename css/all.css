@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #fbdac4;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 10% 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.skin {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  margin-left: -15%;
+  background: #f7c3c7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(50%, #f7c3c7), color-stop(100%, transparent));
+}
+.skin:before, .skin:after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  background: #fbdac4;
+}
+.skin:before {
+  left: -25%;
+  background: -webkit-gradient(linear, right top, left top, color-stop(30%, #fbdac4), color-stop(0%, #f6c0c8));
+}
+.skin:after {
+  right: -25%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f6c0c8), color-stop(30%, #fbdac4));
+}
+
+.pussy {
+  width: 50px;
+  height: 50px;
+  background: #f5aaa9;
+  border-radius: 50px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin: 0 0 0 -25px;
+  -webkit-transition: background-color ease 3s;
+}
+
+.orgasm--1 {
+  background-color: #d57675;
+}
+
+.drop {
+  background-color: #c8eaf9;
+}
+
+.orgasm--1 .pussy__drop {
+  width: 4px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-radius: 4px;
+}
+.orgasm--1 .pussy__drop--1 {
+  margin-left: -5px;
+  -webkit-animation: shortDrop 3s linear forwards;
+}
+.orgasm--1 .pussy__drop--2 {
+  margin-left: 4px;
+  -webkit-animation: longDrop 5s linear forwards;
+}
+
+.climax .pussy {
+  -webkit-transition: all ease 1s;
+  -webkit-transform: scale(100) !important;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.climax .content {
+  display: block;
+  -webkit-animation: showContent 250ms 250ms ease both;
+}
+
+/*
+	ANIMATIONS
+ */
+@-webkit-keyframes showContent {
+  0% {
+    -webkit-transform: translateY(-500px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes shortDrop {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 30px;
+  }
+}
+
+@-webkit-keyframes longDrop {
+  0% {
+    height: 0;
+  }
+
+  75% {
+    height: 40px;
+  }
+
+  100% {
+    height: 50px;
+  }
+}
