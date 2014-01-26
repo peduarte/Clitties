@@ -59,28 +59,46 @@ body {
 
 
 
-.pussy {
+.clit {
 	width: $clitWidth;
 	height: $clitHeight;
 	background: #f5aaa9;
 	border-radius: $clitWidth;
 	position: absolute;
-	top: 25%;
+	top: 15%;
 	left: 50%;
 	margin: 0 0 0 (-$clitWidth/2);
 	-webkit-transition: background-color ease 3s;
+	z-index: 3;
 }
 
-.orgasm--1 {
-	background-color: #d57675;
+.labia {
+	width: $labiaWidth;
+	height: $labiaHeight;
+	background: #f5aaa9;
+	border-radius: 100%;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	margin: $clitWidth+10 0 0 (-$clitWidth/2);
+	z-index: 2;
+	overflow: hidden;
 }
 
 .drop {
 	background-color: #c8eaf9;
 }
 
+
+
+
 .orgasm--1 {
-	.pussy__drop {
+
+	.clit {
+		background-color: #d57675;
+	}
+
+	.clit__drop {
 		width: 4px;
 		position: absolute;
 		top: 100%;
@@ -88,37 +106,79 @@ body {
 		border-radius: 4px;
 	}
 
-	.pussy__drop--1 {
+	.clit__drop--1 {
 		margin-left: -5px;
 		-webkit-animation: shortDrop 3s linear forwards;
 	}
 
-	.pussy__drop--2 {
-
+	.clit__drop--2 {
 		margin-left: 4px;
 		-webkit-animation: longDrop 5s linear forwards;
 	}
+
+	.labia__drop--1 {
+		width: 8px;
+		position: absolute;
+		top: -10px;
+		left: 8px;
+		height: 0;
+		border-radius: 8px;
+		-webkit-animation: xLongDrop 4s 2s linear forwards;
+	}
+
+	.labia__drop--2 {
+		width: 12px;
+		position: absolute;
+		top: 25px;
+		right: -3px;
+		height: 0;
+		border-radius: 12px;
+		-webkit-animation: xxLongDrop 7s 3s linear forwards;
+	}
+
+	.main__drop {
+		width: 20px;
+		border-radius: 20px;
+		position: absolute;
+		top: 15%;
+		left: 50%;
+		margin: ($labiaHeight+$clitHeight) 0 0 (-20px/2);
+		z-index: 1;
+		-webkit-animation: xxxLongDrop 3s 7s linear forwards;
+	}
 }
 
-.climax .pussy {
-	-webkit-transition: all ease 1s;
-	-webkit-transform: scale(100) !important;
+
+
+
+
+.climax {
+
+	.overlay {
+		background-color: #c8eaf9;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		-webkit-animation: showOverlay 3s ease both;
+		z-index: 5;
+	}
+
+	.content {
+		-webkit-animation: showContent 250ms 3s ease forwards;
+	}
+
 }
+
 
 .content {
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	display: none;
+	opacity: 0;
+	z-index: 6;
 }
-
-.climax {
-	.content {
-		display: block;
-		-webkit-animation: showContent 250ms 250ms ease both;
-	}
-}
-
 
 
 
@@ -126,12 +186,23 @@ body {
 	ANIMATIONS
  */
 
-@-webkit-keyframes showContent {
+@-webkit-keyframes showOverlay {
 	0% {
-		-webkit-transform: translateY(-500px);
+		-webkit-transform: translateY(100%);
 	}
 	100% {
 		-webkit-transform: translateY(0px);
+	}
+}
+
+@-webkit-keyframes showContent {
+	0% {
+		-webkit-transform: translateY(-100%);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+		opacity: 1;
 	}
 }
 
@@ -148,10 +219,34 @@ body {
 	0% {
 		height: 0;
 	}
-	75% {
-		height: 40px;
-	}
 	100% {
 		height: 50px;
+	}
+}
+
+@-webkit-keyframes xLongDrop {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 65px;
+	}
+}
+
+@-webkit-keyframes xxLongDrop {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 100px;
+	}
+}
+
+@-webkit-keyframes xxxLongDrop {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 500px;
 	}
 }
