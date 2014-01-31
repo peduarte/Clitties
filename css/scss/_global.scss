@@ -229,6 +229,17 @@ h1 { font-weight: 400; }
 }
 
 
+.social {
+	position: absolute;
+	bottom: 60px;
+	width: 100%;
+}
+
+.social__item {
+	display: inline-block;
+	margin: 0 15px;
+}
+
 
 /*
 	ANIMATIONS
