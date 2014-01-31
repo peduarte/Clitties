@@ -11,34 +11,46 @@ body {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	padding: 10% 0;
 	box-sizing: border-box;
+	font-family: 'Gentium Basic', serif;
+	color: #5D5D5D;
+	font-style: italic;
 }
+
+h1 { font-weight: 400; }
 
 .wrapper {
 	height: 100%;
 	max-width: 800px;
 	margin: 0 auto;
 	position: relative;
+	height: 400px;
+	top: 50%;
+	margin-top: -200px;
 }
 
 .skin {
 	position: absolute;
 	height: 100%;
-	width: 30%;
+	width: 240px;
 	left: 50%;
 	top: 0;
 	bottom: 0;
-	margin-left: -15%;
+	margin-left: -120px;
 
 	background: #f7c3c7;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,transparent), color-stop(50%,#f7c3c7), color-stop(100%,transparent));
+	background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #FBDAC4), color-stop(0.35, #F3AFBC), color-stop(0.65, #F3AFBC), color-stop(1, #FBDAC4) );
+	background-image: -o-linear-gradient(bottom, #FBDAC4 0%, #F3AFBC 35%, #F3AFBC 65%, #FBDAC4 100%);
+	background-image: -moz-linear-gradient(bottom, #FBDAC4 0%, #F3AFBC 35%, #F3AFBC 65%, #FBDAC4 100%);
+	background-image: -webkit-linear-gradient(bottom, #FBDAC4 0%, #F3AFBC 35%, #F3AFBC 65%, #FBDAC4 100%);
+	background-image: -ms-linear-gradient(bottom, #FBDAC4 0%, #F3AFBC 35%, #F3AFBC 65%, #FBDAC4 100%);
+	background-image: linear-gradient(to bottom, #FBDAC4 0%, #F3AFBC 35%, #F3AFBC 65%, #FBDAC4 100%);
 
 	&:before,
 	&:after {
 		content: "";
 		display: block;
-		width: 50%;
+		width: 62%;
 		height: 100%;
 		position: absolute;
 		top: 0;
@@ -48,12 +60,12 @@ body {
 
 	&:before {
 		left: -25%;
-		background: -webkit-gradient(linear, right top, left top, color-stop(30%,#fbdac4), color-stop(0%,#f6c0c8));
+		background: -webkit-gradient(linear, right top, left top, color-stop(40%,#fbdac4), color-stop(0%,#f6c0c8));
 	}
 
 	&:after {
 		right: -25%;
-		background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f6c0c8), color-stop(30%,#fbdac4));
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f6c0c8), color-stop(40%,#fbdac4));
 	}
 }
 
@@ -65,24 +77,30 @@ body {
 	background: #f5aaa9;
 	border-radius: $clitWidth;
 	position: absolute;
-	top: 15%;
+	top: 50px;
 	left: 50%;
 	margin: 0 0 0 (-$clitWidth/2);
-	-webkit-transition: background-color ease 3s;
 	z-index: 3;
+	@include prefixr('transition', background-color ease 3s);
 }
 
 .labia {
 	width: $labiaWidth;
 	height: $labiaHeight;
-	background: #f5aaa9;
 	border-radius: 100%;
 	position: absolute;
-	top: 15%;
+	top: 95px;
 	left: 50%;
-	margin: $clitWidth+10 0 0 (-$clitWidth/2);
+	margin: 0 0 0 (-$labiaWidth/2);
 	z-index: 2;
 	overflow: hidden;
+	background: #f5aaa9;
+	background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #F5AAA9), color-stop(0.5, #F5AAA9), color-stop(1, #F5AAA9) );
+	background-image: -o-linear-gradient(bottom, #F5AAA9 0%, #F5AAA9 50%, #F5AAA9 100%);
+	background-image: -moz-linear-gradient(bottom, #F5AAA9 0%, #F5AAA9 50%, #F5AAA9 100%);
+	background-image: -webkit-linear-gradient(bottom, #F5AAA9 0%, #F5AAA9 50%, #F5AAA9 100%);
+	background-image: -ms-linear-gradient(bottom, #F5AAA9 0%, #F5AAA9 50%, #F5AAA9 100%);
+	background-image: linear-gradient(to bottom, #F5AAA9 0%, #F5AAA9 50%, #F5AAA9 100%);
 }
 
 .drop {
@@ -102,18 +120,19 @@ body {
 		width: 4px;
 		position: absolute;
 		top: 100%;
+		margin-top: -1px;
 		left: 50%;
 		border-radius: 4px;
 	}
 
 	.clit__drop--1 {
 		margin-left: -5px;
-		-webkit-animation: shortDrop 3s linear forwards;
+		@include prefixr('animation', shortDrop 3s linear forwards);
 	}
 
 	.clit__drop--2 {
 		margin-left: 4px;
-		-webkit-animation: longDrop 5s linear forwards;
+		@include prefixr('animation', longDrop 5s linear forwards);
 	}
 
 	.labia__drop--1 {
@@ -123,7 +142,7 @@ body {
 		left: 8px;
 		height: 0;
 		border-radius: 8px;
-		-webkit-animation: xLongDrop 4s 2s linear forwards;
+		@include prefixr('animation', xLongDrop 4s 2s linear forwards);
 	}
 
 	.labia__drop--2 {
@@ -133,18 +152,18 @@ body {
 		right: -3px;
 		height: 0;
 		border-radius: 12px;
-		-webkit-animation: xxLongDrop 7s 3s linear forwards;
+		@include prefixr('animation', xxLongDrop 7s 3s linear forwards);
 	}
 
 	.main__drop {
 		width: 20px;
 		border-radius: 20px;
 		position: absolute;
-		top: 15%;
+		top: 0;
 		left: 50%;
-		margin: ($labiaHeight+$clitHeight) 0 0 (-20px/2);
+		margin: ($labiaHeight+$clitHeight+50) 0 0 (-20px/2);
 		z-index: 1;
-		-webkit-animation: xxxLongDrop 3s 7s linear forwards;
+		@include prefixr('animation', xxxLongDrop 3s 7s linear forwards);
 	}
 }
 
@@ -161,12 +180,12 @@ body {
 		bottom: 0;
 		width: 100%;
 		height: 100%;
-		-webkit-animation: showOverlay 3s ease both;
+		@include prefixr('animation', showOverlay 3s ease both);
 		z-index: 5;
 	}
 
 	.content {
-		-webkit-animation: showContent 250ms 3s ease forwards;
+		@include prefixr('animation', showContent 1s 3s linear forwards);
 	}
 
 }
@@ -174,10 +193,39 @@ body {
 
 .content {
 	position: absolute;
+	top: 0;
 	width: 100%;
+	height: 100%;
 	text-align: center;
 	opacity: 0;
 	z-index: 6;
+
+	h1 {
+		line-height: 0;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+
+		@include media-query(large) {
+			font-size: 60px;
+		}
+	}
+
+	p {
+		position: absolute;
+		bottom: 30px;
+		width: 100%;
+		font-size: 14px;
+
+		@include media-query(large) {
+			font-size: 20px;
+		}
+	}
+
+	a {
+		color: #5D5D5D;
+		text-decoration: underline;
+	}
 }
 
 
@@ -186,27 +234,27 @@ body {
 	ANIMATIONS
  */
 
-@-webkit-keyframes showOverlay {
+@include keyframes(showOverlay) {
 	0% {
 		-webkit-transform: translateY(100%);
+		@include prefixr('transform', translateY(100%));
 	}
 	100% {
 		-webkit-transform: translateY(0px);
+		@include prefixr('transform', translateY(0px));
 	}
 }
 
-@-webkit-keyframes showContent {
+@include keyframes(showContent) {
 	0% {
-		-webkit-transform: translateY(-100%);
-		opacity: 1;
+		opacity: 0;
 	}
 	100% {
-		-webkit-transform: translateY(0px);
 		opacity: 1;
 	}
 }
 
-@-webkit-keyframes shortDrop {
+@include keyframes(shortDrop) {
 	0% {
 		height: 0;
 	}
@@ -215,7 +263,7 @@ body {
 	}
 }
 
-@-webkit-keyframes longDrop {
+@include keyframes(longDrop) {
 	0% {
 		height: 0;
 	}
@@ -224,7 +272,7 @@ body {
 	}
 }
 
-@-webkit-keyframes xLongDrop {
+@include keyframes(xLongDrop) {
 	0% {
 		height: 0;
 	}
@@ -233,7 +281,7 @@ body {
 	}
 }
 
-@-webkit-keyframes xxLongDrop {
+@include keyframes(xxLongDrop) {
 	0% {
 		height: 0;
 	}
@@ -242,7 +290,7 @@ body {
 	}
 }
 
-@-webkit-keyframes xxxLongDrop {
+@include keyframes(xxxLongDrop) {
 	0% {
 		height: 0;
 	}
