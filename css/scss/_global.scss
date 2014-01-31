@@ -165,30 +165,12 @@ h1 { font-weight: 400; }
 		z-index: 1;
 		@include prefixr('animation', xxxLongDrop 3s 7s linear forwards);
 	}
+
+	.icon {
+		opacity: 0;
+	}
 }
 
-
-
-
-
-.climax {
-
-	.overlay {
-		background-color: #c8eaf9;
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
-		@include prefixr('animation', showOverlay 3s ease both);
-		z-index: 5;
-	}
-
-	.content {
-		@include prefixr('animation', showContent 1s 3s linear forwards);
-	}
-
-}
 
 
 .content {
@@ -213,7 +195,7 @@ h1 { font-weight: 400; }
 
 	p {
 		position: absolute;
-		bottom: 30px;
+		bottom: 50px;
 		width: 100%;
 		font-size: 14px;
 
@@ -231,7 +213,7 @@ h1 { font-weight: 400; }
 
 .social {
 	position: absolute;
-	bottom: 65px;
+	bottom: 105px;
 	width: 100%;
 }
 
@@ -241,6 +223,46 @@ h1 { font-weight: 400; }
 	vertical-align: top;
 }
 
+
+.icon {
+	display: block;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	width: 65px;
+	height: 111px;
+	z-index: 2;
+	background: url('../icon.png') 0 0 no-repeat;
+	@include prefixr('transition', opacity 1s linear);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.icon {
+		width: 33px;
+		height: 56px;
+		background-size: 33px 56px;
+	}
+}
+
+
+.climax {
+
+	.overlay {
+		background-color: #c8eaf9;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		@include prefixr('animation', showOverlay 3s ease both);
+		z-index: 5;
+	}
+
+	.content {
+		@include prefixr('animation', showContent 1s 3s linear forwards);
+	}
+
+}
 
 /*
 	ANIMATIONS

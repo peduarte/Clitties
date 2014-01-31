@@ -170,25 +170,8 @@ h1 {
   -ms-animation: xxxLongDrop 3s 7s linear forwards;
   animation: xxxLongDrop 3s 7s linear forwards;
 }
-
-.climax .overlay {
-  background-color: #c8eaf9;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-animation: showOverlay 3s ease both;
-  -moz-animation: showOverlay 3s ease both;
-  -ms-animation: showOverlay 3s ease both;
-  animation: showOverlay 3s ease both;
-  z-index: 5;
-}
-.climax .content {
-  -webkit-animation: showContent 1s 3s linear forwards;
-  -moz-animation: showContent 1s 3s linear forwards;
-  -ms-animation: showContent 1s 3s linear forwards;
-  animation: showContent 1s 3s linear forwards;
+.orgasm--1 .icon {
+  opacity: 0;
 }
 
 .content {
@@ -213,7 +196,7 @@ h1 {
 }
 .content p {
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   width: 100%;
   font-size: 14px;
 }
@@ -229,7 +212,7 @@ h1 {
 
 .social {
   position: absolute;
-  bottom: 65px;
+  bottom: 105px;
   width: 100%;
 }
 
@@ -237,6 +220,48 @@ h1 {
   display: inline-block;
   margin: 0 15px;
   vertical-align: top;
+}
+
+.icon {
+  display: block;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 65px;
+  height: 111px;
+  z-index: 2;
+  background: url("../icon.png") 0 0 no-repeat;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -ms-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .icon {
+    width: 33px;
+    height: 56px;
+    background-size: 33px 56px;
+  }
+}
+.climax .overlay {
+  background-color: #c8eaf9;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: showOverlay 3s ease both;
+  -moz-animation: showOverlay 3s ease both;
+  -ms-animation: showOverlay 3s ease both;
+  animation: showOverlay 3s ease both;
+  z-index: 5;
+}
+.climax .content {
+  -webkit-animation: showContent 1s 3s linear forwards;
+  -moz-animation: showContent 1s 3s linear forwards;
+  -ms-animation: showContent 1s 3s linear forwards;
+  animation: showContent 1s 3s linear forwards;
 }
 
 /*
