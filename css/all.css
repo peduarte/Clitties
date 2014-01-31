@@ -227,6 +227,18 @@ h1 {
   text-decoration: underline;
 }
 
+.social {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+}
+
+.social__item {
+  display: inline-block;
+  margin: 0 15px;
+  vertical-align: bottom;
+}
+
 /*
 	ANIMATIONS
  */
