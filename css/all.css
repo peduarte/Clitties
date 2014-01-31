@@ -229,14 +229,14 @@ h1 {
 
 .social {
   position: absolute;
-  bottom: 60px;
+  bottom: 65px;
   width: 100%;
 }
 
 .social__item {
   display: inline-block;
   margin: 0 15px;
-  vertical-align: bottom;
+  vertical-align: top;
 }
 
 /*
